@@ -1,0 +1,17 @@
+.nav-home {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-link-landing{
+    font-size: 25px;
+}
+
+.nav-links {
+    display:flex;
+    margin-top: 10px;
+}
+
+.nav-volunteers {
+    padding-right: 8px;
+}

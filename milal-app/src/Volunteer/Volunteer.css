@@ -1,0 +1,21 @@
+.volunteer {
+    margin-bottom: 8px;
+    max-width: 380px;
+    padding: 8px 0 8px 8px;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 3px
+}
+
+
+.volunteer a {
+    text-decoration: none;
+    color: black;
+    padding: 5px
+}
+
+.volunteer a:hover {
+    background-color: lightgray;
+    border-radius: 2px;
+}
+

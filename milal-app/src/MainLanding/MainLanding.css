@@ -1,0 +1,13 @@
+.landing-summary {
+    margin: auto;
+    max-width: 300px;
+    padding: 8px 0 8px 8px;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 3px
+}
+
+button {
+    display: flex;
+    margin: auto;
+}
