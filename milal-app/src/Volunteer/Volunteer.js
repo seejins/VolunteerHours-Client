@@ -8,15 +8,15 @@ class Volunteer extends Component {
             <>
                 <div className="volunteer">
 
-                    <div className="volunteer-name">
+                    <div className="list volunteer-name">
                         <h2>{name}</h2>
                     </div>
 
-                    <div className="volunteer-absents">
+                    <div className="list volunteer-absents">
                         Absents: {absents}
                     </div>
 
-                    <div className="volunteer-tardies">
+                    <div className="list volunteer-tardies">
                         Tardies: {tardies}
                     </div>
 

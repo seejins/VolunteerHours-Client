@@ -7,3 +7,7 @@ ul {
     margin: auto;
     padding: 0px;
 }
+
+.volunteer-container {
+    display: block;
+}
