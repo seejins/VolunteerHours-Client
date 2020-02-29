@@ -19,7 +19,7 @@ class MainNewVolunteer extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        let { name, absents, tardies, total_hours  } = e.target
+        let { name, absents, tardies, total_hours } = e.target
         const volunteer = {
             name: name.value,
             absents: (absents.value),
@@ -56,7 +56,7 @@ class MainNewVolunteer extends Component {
     }
 
     handleClickCancel = () => {
-        this.props.history.push('/')
+        this.props.history.push('/home')
     }
 
     render() {
@@ -70,7 +70,7 @@ class MainNewVolunteer extends Component {
                             <label htmlFor='name'>
                                 Name
                                 {' '}
-                               
+
                             </label>
                             <input className="input name" type="text" placeholder="Random Name" id='name' required />
                         </div>
@@ -79,7 +79,7 @@ class MainNewVolunteer extends Component {
                             <label htmlFor='absents'>
                                 Absents
                                 {' '}
-                            
+
                             </label>
                             <input className="input absents" type="number" placeholder="Absents" id='absents' required />
                         </div>
@@ -88,7 +88,7 @@ class MainNewVolunteer extends Component {
                             <label htmlFor='tardies'>
                                 Tardies
                                 {' '}
-                            
+
                             </label>
                             <input className="input tardies" type="number" placeholder="Tardies" id='tardies' required />
                         </div>
@@ -98,13 +98,16 @@ class MainNewVolunteer extends Component {
                                 Total Hours
                                 {' '}
                             </label>
-                            <input className="input total-hours" type="number" placeholder="Total Hours" id='total_hours'required />
+                            <input className="input total-hours" type="number" placeholder="Total Hours" id='total_hours' required />
                         </div>
 
-                        <button className="input submit-button" type='submit'> Add Volunteer</button>
-                        <button className="input cancel-button" type='button' onClick={this.handleClickCancel}>
-                            Cancel
+                        <div className="button-container">
+
+                            <button className="submit-button" type='submit'> Submit</button>
+                            <button className="cancel-button" type='button' onClick={this.handleClickCancel}>
+                                Cancel
                         </button>
+                        </div>
                     </form>
 
 

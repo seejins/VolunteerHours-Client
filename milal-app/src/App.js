@@ -129,7 +129,7 @@ class App extends Component {
 
         <Route
           exact path='/edit/:volunteerId'
-          key='/newVolunteer'
+          key='/editVolunteer'
           component={NavHome}
         />
 

@@ -192,13 +192,14 @@ class MainEditVolunteer extends Component {
                             onChange={this.handleChangeTotalHours}
                         />
                     </div>
-                        <button className="input save-button" type='submit'>
+                    <div className="button-container">
+                        <button className="save-button" type='submit'>
                             Save
                         </button>
-                        <button className="input cancel-button" type='button' onClick={this.handleClickCancel}>
+                        <button className="cancel-button" type='button' onClick={this.handleClickCancel}>
                             Cancel
                         </button>
-    
+                    </div>
                 </form>
             </section>
         )

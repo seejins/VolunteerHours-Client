@@ -3,10 +3,12 @@
     padding: 8px;
     position: relative;
     border: 1px solid black;
-    border-radius: 3px;
+    border-radius: 10px;
     display:flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
+    background-color:#E9CC3A;
+    color: #0F2A6C;
 }
 
 
@@ -27,13 +29,14 @@
 .Collapsible {
     width: 18rem;
     padding: 10px;
+    cursor:pointer;
 }
 
 .Collapsible__trigger {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -52,3 +55,8 @@
     width: 50px;
     height: 5rem;
 }
+
+.icon {
+    color: #0F2A6C;
+}
+

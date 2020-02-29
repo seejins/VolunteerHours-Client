@@ -6,6 +6,8 @@ ul {
 .volunteer-list {
     margin: auto;
     padding: 0px;
+    max-width: 400px;
+    min-width: 300px;
 }
 
 .volunteer-container {

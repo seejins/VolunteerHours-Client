@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 * {
     box-sizing: border-box;
+    font-family: 'Open Sans' ;
+    
+}
+
+html {
+    background-color: #33519C
 }
 
 .App {
-    display: flexbox;
+    display: flexbox;;
 }
 
 
@@ -12,23 +20,31 @@
     padding: 10px;
     text-shadow: 2px 1px 2px black;
     max-height: 50px;
-
 }
 
 .App-Main {
     padding-top: 5rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    height: 100vh;
     margin: 0 auto;
 }
 
 .App-Header a {
-    color: black;
+    color: #FFB519;
 }
 
 button {
     border: 1px solid black;
-    border-radius: 3px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 25vh;
+    height: 30px;
+    margin-bottom: 5px;
+    align-items: center;
 }
 
 a:link {
@@ -41,13 +57,57 @@ a:hover, a:active {
     transition-duration: 0.4s;
 }
 
-button {
-    background-color: white;
-}
-
 button:hover, button:active {
-    background-color: black;
-    color: white;
+    background-color: #FFB519;
+    color: #0F2A6C;
+    font-weight: bold;
     transition-duration: 0.4s
 }
 
+a {
+    border-radius: 10px;
+    padding:3px;
+    display:flex;
+    flex-direction: center;
+}
+
+.submit-button, .save-button {
+    background-color: black;
+    color: white;
+}
+
+
+@media screen and (min-width: 600px) {
+
+    .volunteer-list, .App-Main {
+        max-width: 700px;
+        min-width: 600px; 
+    }
+
+    .nav-link-landing{
+        font-size: 40px;
+    }
+    
+    .nav-links {
+        font-size: 26px;
+    }
+
+    .nav-volunteers {
+        padding-right: 30px;
+    }
+
+    .volunteer {
+        align-items: left;
+    }
+}
+
+
+@media screen and (min-width: 900px) {
+
+    .volunteer-list, .App-Main {
+        max-width: 1000px;
+        min-width: 900px;
+    }
+
+    
+}

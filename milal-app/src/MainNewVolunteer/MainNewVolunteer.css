@@ -31,3 +31,15 @@
     flex-direction: column;
 }
 
+label, h2 {
+    color: #E9CC3A;
+    font-weight: bold;
+}
+
+
+.icon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+

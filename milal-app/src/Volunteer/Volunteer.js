@@ -53,13 +53,13 @@ class Volunteer extends Component {
                             </div>
 
                         </div>
-                        <div className="button-container">
+                        <div className="icon-container">
                             <Link to={`/edit/${this.props.id}`}>
-                                <FontAwesomeIcon icon="edit" size="lg" />
+                                <FontAwesomeIcon className="icon edit" icon="edit" size="lg" />
                             </Link>
 
                             <Link to={`/home`}>
-                            <FontAwesomeIcon icon="trash" size="lg" onClick={() => deleteVolunteerRequest(this.props.id, this.context.deleteVolunteer)}/>
+                            <FontAwesomeIcon className="icon trash" icon="trash" size="lg" onClick={() => deleteVolunteerRequest(this.props.id, this.context.deleteVolunteer)}/>
                             </Link>
                         </div>
                     </Collapsible>
