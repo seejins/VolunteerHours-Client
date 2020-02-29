@@ -13,11 +13,11 @@ class NavHome extends Component {
 
                     <div className="nav-links">
 
-                        <a className="nav-volunteers" href="/home">
+                        <a className="link nav-volunteers" href="/home">
                             Volunteers
                         </a>
 
-                        <a className="new-volunteer" href="/new">
+                        <a className="link new-volunteer" href="/new">
                             New Volunteer
                         </a>
 

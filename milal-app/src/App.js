@@ -1,29 +1,78 @@
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom'
-import dummyList from './dummy-list'
 import MainLanding from './MainLanding/MainLanding'
 import MainHome from './MainHome/MainHome'
-import VolunteerContext from './volunteerContext';
 import NavLanding from './NavLanding/NavLanding'
 import NavHome from './NavHome/NavHome'
+import MainEditVolunteer from './MainEditVolunteer/MainEditVolunteer'
 import './App.css'
-import MainNewVolunteer from './MainNewVolunteer/MainNewVolunteer';
+import MainNewVolunteer from './MainNewVolunteer/MainNewVolunteer'
+import VolunteersContext from './VolunteersContext'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
+import config from './config'
 
 
+
+library.add(faEdit, faTrash)
 
 class App extends Component {
   state = {
-    volunteers: [dummyList]
+    volunteers: [],
+    error: null,
+  }
+
+  setVolunteers = volunteers => {
+    this.setState({
+      volunteers,
+      error: null,
+    })
+  }
+
+  addVolunteer = volunteer => {
+    this.setState({
+      volunteers: [...this.state.volunteers, volunteer ],
+    })
+  }
+
+  deleteVolunteer = volunteerId => {
+    const newVolunteers = this.state.volunteers.filter(vol => 
+      vol.id !== volunteerId
+      )
+      this.setState({
+        volunteers: newVolunteers
+      })
   }
 
   componentDidMount() {
-    this.setState(dummyList)
-    console.log(this.state)
+    fetch(config.API_ENDPOINT, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    .then(res => {
+      if(!res.ok) {
+        return res.json().then(error => Promise.reject(error))
+      }
+      return res.json()
+    })
+    .then(this.setVolunteers)
+    .catch(error => {
+      console.error(error)
+      this.setState({ error })
+    })
   }
 
-  getMainRoutes() {
-    const { volunteers } = this.state
+  editVolunteer = editedVolunteer => {
+    this.setState({
+      volunteers: this.state.volunteers.map(vol =>
+        (vol.id !== editedVolunteer.id) ? vol : editedVolunteer)
+    })
+  }
 
+
+  getMainRoutes() {
     return (
       <>
         <Route
@@ -43,6 +92,13 @@ class App extends Component {
           key='/newVolunteer'
           component={MainNewVolunteer}
         />
+
+        <Route 
+          exact path='/edit/:volunteerId'
+          key='/editVolunteer'
+          component={MainEditVolunteer}
+        />
+
 
       </>
     )
@@ -71,6 +127,12 @@ class App extends Component {
           component={NavHome}
         />
 
+        <Route
+          exact path='/edit/:volunteerId'
+          key='/newVolunteer'
+          component={NavHome}
+        />
+
 
       </>
     )
@@ -80,7 +142,10 @@ class App extends Component {
 
   render() {
     const contextValue = {
-      volunteers: this.state.volunteers
+      volunteers: this.state.volunteers,
+      addVolunteer: this.addVolunteer,
+      deleteVolunteer: this.deleteVolunteer,
+      editVolunteer: this.editVolunteer,
     }
 
     return (
@@ -89,13 +154,13 @@ class App extends Component {
           <header className="App-Header">
             {this.getNavRoutes()}
           </header>
-          <VolunteerContext.Provider value={contextValue}>
+          <VolunteersContext.Provider value={contextValue}>
 
           <main className="App-Main">
             {this.getMainRoutes()}
           </main>
 
-          </VolunteerContext.Provider>
+          </VolunteersContext.Provider>
         </div>
       </Fragment>
     );

@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import MainNewVolunteer from './MainNewVolunteer';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<MainNewVolunteer />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

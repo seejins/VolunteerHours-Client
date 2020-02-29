@@ -13,7 +13,6 @@
 .volunteer a {
     text-decoration: none;
     color: black;
-    padding: 5px
 }
 
 .volunteer a:hover {
@@ -22,5 +21,34 @@
 }
 
 .list {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+.Collapsible {
+    width: 18rem;
+    padding: 10px;
+}
+
+.Collapsible__trigger {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.Collapsible__contentInner {
+    margin-top: 10px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.button {
+    width: 50px;
+    height: 5rem;
 }
